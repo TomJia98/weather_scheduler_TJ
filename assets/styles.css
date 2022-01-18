@@ -1,6 +1,18 @@
 hr {
   border: solid 1px black;
-  width: 96%;
+  width: 30%;
   color: #ffff00;
   height: 1px;
+}
+header {
+  width: 25%;
+  display: inline;
+}
+main {
+  float: left;
+  display: inline;
+}
+
+#next-week {
+  display: flex;
 }
