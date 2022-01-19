@@ -25,6 +25,15 @@ main {
   min-width: 15%;
 }
 
+.list {
+  color: blue;
+  list-style: none;
+  padding: 5px 50px 5px 50px;
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .low {
   padding: 15px;
   border-radius: 5px;
