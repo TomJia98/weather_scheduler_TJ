@@ -16,3 +16,27 @@ main {
 #next-week {
   display: flex;
 }
+
+#next-week div {
+  background-color: rgb(31, 31, 109);
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  min-width: 15%;
+}
+
+.low {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(51, 161, 51);
+}
+.medium {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(230, 117, 25);
+}
+.high {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: red;
+}
