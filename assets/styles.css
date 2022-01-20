@@ -1,16 +1,87 @@
-hr {
-  border: solid 1px black;
-  width: 30%;
-  color: #ffff00;
-  height: 1px;
-}
 header {
   width: 25%;
   display: inline;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(to right, red, yellow);
 }
+
+aside {
+  float: left;
+  display: inline;
+  margin-right: 50px;
+}
+
 main {
   float: left;
   display: inline;
+}
+
+hr {
+  border: solid 1px black;
+  width: 95%;
+  height: 0px;
+}
+
+h1 {
+  background-image: linear-gradient(
+    to right,
+    rgb(53, 53, 224),
+    rgb(25, 25, 114)
+  );
+  padding: 20px;
+}
+
+.list {
+  padding: 5px 50px 5px 50px;
+  background-color: rgb(160, 155, 155);
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  width: 100%;
+  position: relative;
+  right: 30px;
+}
+
+.list:hover {
+  background-color: grey;
+}
+
+.low {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(51, 161, 51);
+}
+
+.medium {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(230, 117, 25);
+}
+
+.high {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: red;
+}
+
+#search {
+  padding: 10px 20px 10px 20px;
+  margin-left: 20px;
+}
+
+#search-button {
+  display: block;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 15px;
+}
+
+#current-day {
+  border: solid black 1px;
+  padding: 10px;
 }
 
 #next-week {
@@ -25,27 +96,6 @@ main {
   min-width: 15%;
 }
 
-.list {
-  color: blue;
-  list-style: none;
-  padding: 5px 50px 5px 50px;
-  background-color: grey;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.low {
-  padding: 15px;
-  border-radius: 5px;
-  background-color: rgb(51, 161, 51);
-}
-.medium {
-  padding: 15px;
-  border-radius: 5px;
-  background-color: rgb(230, 117, 25);
-}
-.high {
-  padding: 15px;
-  border-radius: 5px;
-  background-color: red;
+#image0 {
+  background-color: rgb(74, 74, 197);
 }
