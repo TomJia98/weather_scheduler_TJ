@@ -12,6 +12,8 @@ The UVI rating for that day is color coded based on severity.
 
 Any recently searched cities will be shown under the search bar for easy repeat access.
 
+While the data is being fetched, the city name changes to "loading", if an error occurs, it changes to "error, city not found" and a button will not be produced.
+
 ## Challenges Faced
 
 When using the API to search for cities, i found that the main API didnt use city names as a filter, only latitude and longitide, but one of the other APIS did use the city name, but didnt return all the information I needed to display.
