@@ -50,10 +50,16 @@ function setData(data){
 
   // sets all the current data into the main section
   if (data.current.uvi < 2){
+    currentUV.removeClass("medium");
+    currentUV.removeClass("high");
     currentUV.addClass("low")
   } else if (data.current.uvi < 7){
+    currentUV.removeClass("high");
+    currentUV.removeClass("low");
     currentUV.addClass("medium");
   } else if (data.current.uvi > 7){
+    currentUV.removeClass("medium")
+    currentUV.removeClass("low");
     currentUV.addClass("high");
   }
   // sets the background colour for the uv index based on its value
