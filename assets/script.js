@@ -1,6 +1,6 @@
 const searchButton = $("#search-button");
 const cityName = $("#search");
-const ulEl = document.querySelector("ul");
+const ulEl = $("ul");
 
 const currentTemp = $("#temp0");
 const currentWind = $("#wind0");
@@ -94,7 +94,7 @@ function saveCity(){
 var textnode = document.createTextNode(localStorage.getItem(i));
 node.setAttribute("class","list");        
 node.appendChild(textnode);                              
-ulEl.appendChild(node);
+ulEl.append(node);
   }
 
 
@@ -102,7 +102,7 @@ ulEl.appendChild(node);
 
  saveCity();
 searchButton.on("click", function() {
-  currentCity.text(cityName.val() + " " + moment().format("D/M/YYYY"));
+  currentCity.text("loading");
 
   fetch('https://api.openweathermap.org/data/2.5/weather?q='+ cityName.val() +'&units=metric&appid=472223ee56646a3fe3c46a3e7f45c283')// 472223ee56646a3fe3c46a3e7f45c283
     .then(function (response) {
@@ -118,6 +118,8 @@ searchButton.on("click", function() {
   return response.json();
 })
 .then(function (data) {
+  currentCity.text(cityName.val() + " " + moment().format("D/M/YYYY"));
+
   console.log(data);
 
 if (localStorage.getItem("clicks")!=null){
@@ -127,7 +129,7 @@ var textnode = document.createTextNode(cityName.val());
 localStorage.setItem(localStorage.getItem("clicks"), cityName.val());   
 node.appendChild(textnode);
 node.setAttribute("class","list");                          
-ulEl.appendChild(node);
+ulEl.append(node);
 localStorage.setItem("clicks", parseInt(localStorage.getItem("clicks"))+1)
 
 } else {
@@ -138,7 +140,7 @@ var textnode = document.createTextNode(cityName.val());
 localStorage.setItem(localStorage.getItem("clicks"), cityName.val());   
 node.appendChild(textnode);
 node.setAttribute("class","list");                             
-ulEl.appendChild(node);
+ulEl.append(node);
 localStorage.setItem("clicks", parseInt(localStorage.getItem("clicks"))+1);
 }
   setData(data);
@@ -146,8 +148,8 @@ localStorage.setItem("clicks", parseInt(localStorage.getItem("clicks"))+1);
     });
 })
 
-$(".list").on("click", function(event){
-  currentCity.text(event.target.innerText + " " + moment().format("D/M/YYYY"));
+ulEl.on("click", function(event){
+  currentCity.text("loading");
 console.log(event.target.innerText);
 fetch('https://api.openweathermap.org/data/2.5/weather?q='+ event.target.innerText +'&units=metric&appid=472223ee56646a3fe3c46a3e7f45c283')// 472223ee56646a3fe3c46a3e7f45c283
     .then(function (response) {
@@ -159,7 +161,9 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+ event.target.innerTe
 
       fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ latitude + '&lon=' + longitude +'&units=metric&appid=472223ee56646a3fe3c46a3e7f45c283')
 .then(function (response) {
+  currentCity.text(event.target.innerText + " " + moment().format("D/M/YYYY"));
   return response.json();
+
 })
 .then(function (data) {
 setData(data);
